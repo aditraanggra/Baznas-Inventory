@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ItemName": {
+      "type": "string"
+    },
+    "ItemDesc": {
+      "type": "string"
+    },
+    "Unit": {
+      "type": "string"
+    },
+    "ItemIn": {
+      "type": "biginteger"
+    },
+    "ItemOut": {
+      "type": "biginteger"
+    },
+    "TotalQty": {
+      "type": "biginteger"
+    },
+    "StockIn": {
+      "type": "date"
+    },
+    "StockOut": {
+      "type": "date"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "items"
+    },
+    "divisions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::division.division",
+      "inversedBy": "items"
+    }
+  }
+}
